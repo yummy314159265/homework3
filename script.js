@@ -9,10 +9,10 @@ const numOfCharactersPrompt = () => {
 
   //get an input for the number of characters and coerces type to Number
   let numOfCharsInput = Number(prompt("How many characters will be in your password? Choose between 8-128 characters:"));
-  console.log(numOfCharsInput)
+
   //if user inputs a number, loop until user inputs a valid number
   if (numOfCharsInput < 8) {
-    //set input to the output of the looped function
+    //set input to the output of the looped function.
     numOfCharsInput = numOfCharactersPrompt();
   } else if (numOfCharsInput > 128) {
     numOfCharsInput = numOfCharactersPrompt();
