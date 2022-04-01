@@ -41,10 +41,10 @@ const special = ` !"#$%&'()*+,-./:;<=>?@[\\]^_\`\{|\}~`;
 //this function prompts the user to include certain characters in password
 const includeCharacterPrompts = () => {
   //these are the user prompts, they are stored in their respective variables as booleans
-  let includeLowercase = confirm("Include lowercase?");
-  let includeUppercase = confirm("Include uppercase?");
-  let includeNumeric = confirm("Include numbers?");
-  let includeSpecial = confirm("Include special characters?");
+  const includeLowercase = confirm("Include lowercase?");
+  const includeUppercase = confirm("Include uppercase?");
+  const includeNumeric = confirm("Include numbers?");
+  const includeSpecial = confirm("Include special characters?");
 
   //create an empty string that we will add the list of characters that are acceptable in the password to
   let charList = "";
