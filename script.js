@@ -10,19 +10,19 @@ const numOfCharactersPrompt = () => {
   //get an input for the number of characters and coerces type to Number
   let numOfCharsInput = Number(prompt("How many characters will be in your password? Choose between 8-128 characters:"));
 
-  //if user inputs a number, loop until user inputs a valid number
-  if (numOfCharsInput < 8) {
-    //set input to the output of the looped function.
-    numOfCharsInput = numOfCharactersPrompt();
-  } else if (numOfCharsInput > 128) {
-    numOfCharsInput = numOfCharactersPrompt();
-  } 
-  
   //if user cancels, or inputs a string instead of a number (the isNaN method), exit prompt 
-  //(because you are looping, you want this after the previous if statements and not before
+  //(because you are looping, you want this before the if statements and not after
   //so that you can escape the function properly)
   if (!numOfCharsInput || Number.isNaN(numOfCharsInput)) {
     return;
+  }
+
+  //if user inputs a number, loop until input is less than 8 and greater than 128 until user inputs a valid number
+  if (numOfCharsInput < 8) {
+    //set input to the output of the looped function
+    numOfCharsInput = numOfCharactersPrompt();
+  } else if (numOfCharsInput > 128) {
+    numOfCharsInput = numOfCharactersPrompt();
   }
 
   //return input if an acceptable number is entered
@@ -93,7 +93,7 @@ const generatePassword = () => {
   if (passwordCanContain === undefined) {
     return "";
   }
-  
+
   //create an empty string for our new password
   let newPassword = "";
 
@@ -125,4 +125,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
