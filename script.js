@@ -17,7 +17,7 @@ const numOfCharactersPrompt = () => {
     return;
   }
 
-  //if user inputs a number, loop until input is less than 8 and greater than 128 until user inputs a valid number
+  //if user inputs a number, loop until user inputs a valid number
   if (numOfCharsInput < 8) {
     //set input to the output of the looped function
     numOfCharsInput = numOfCharactersPrompt();
@@ -68,7 +68,7 @@ const includeCharacterPrompts = () => {
 
   //if user did not click OK to any of the prompts, password will not be generated
   if (charList === "") {
-    alert("Cannot make a password. Password must include at least one type of character.")
+    alert("Cannot make a password. Password must include at least one type of character.");
     return;
   }
 
